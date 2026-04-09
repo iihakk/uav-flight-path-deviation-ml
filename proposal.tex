@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage{times}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\titleformat{\section}{\normalfont\bfseries\normalsize}{\thesection}{0.5em}{}
+\titlespacing*{\section}{0pt}{0.8ex}{0.3ex}
+\setlist{nosep, leftmargin=*, topsep=2pt}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+\title{\vspace{-2.5em}\textbf{Predicting UAV Flight Path Deviation from Wind Conditions Using Machine Learning}\vspace{-1em}}
+\author{
+  Abdulaziz Al-Haidary \quad and \quad Azizbek Nurmatov\\[-1pt]
+  \normalsize College of Charleston\\
+  \normalsize alhaidaryaa@g.cofc.edu, nurmatova@g.cofc.edu
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-2em}
+
+\section{Project Idea}
+
+Unmanned aerial vehicles (UAVs) have become really widespread in areas like precision agriculture, package delivery and disaster surveying. One persistant challenge though, is that wind significantly throws off the UAV from its intended flight path, which can lead to mission failure or even safety hazards. The goal of this project is to use machine learning to predict how much a UAV deviates from its planned trajectory based on wind speed and direction data collected during flight. Being able to model this relationship accurately could eventually feed into real-time correction systems onboard the drone, which we think makes it a pretty compelling problem to tackle.
+
+What makes our approach go beyond a basic regression task is the feature engineering we are planning. Rather than just feeding raw GPS coordinates and wind readings into a model, we will compute derived features that capture the physics -- like the angle between wind direction and UAV heading at each waypoint, rolling averages of gust intensity, and cumulative deviation over a flight segment. We want to compare decision trees, random forests, and KNN regression to see which one best captures the wind-deviation relationship, and also investigate what factors contribute most to large deviations (e.g.\ sustained crosswinds vs sudden gusts).
+
+\section{Dataset Description}
+
+Our dataset comes from Dr.\ Hemanth Dakshinamurthy at South Carolina State University and includes real UAV flight mission data. It has three components: (1)~the desired flight path as a sequence of GPS waypoints, (2)~the actual recorded flight path from onboard sensors, and (3)~weather data including wind speed and direction captured during each mission. We already have access to a sample from a Pika-L flight on November 6th and will begin preprocessing immediatley.
+
+\section{Software}
+
+We will build a Python pipeline covering: data preprocessing for merging flight logs with weather records and coordinate allignment, feature engineering (Euclidean deviation between waypoint pairs, heading-wind angle, rolling statistics), model training using scikit-learn for decision tree, random forest and KNN regressors, and visualization with matplotlib for plotting actual vs.\ desired paths and model performance. Code will be on GitHub.
+
+\section{Papers to Read}
+
+\begin{enumerate}
+    \item R.\ Palomaki et al., ``Wind estimation in the lower atmosphere using multirotor aircraft,'' \textit{J.\ Atmos.\ Oceanic Technol.}, 34(5), 2017.
+    \item P.\ Abichandani et al., ``Wind measurement and simulation techniques in multi-rotor small UAVs,'' \textit{IEEE Access}, 8, 2020.
+    \item N.\ Sydney et al., ``Dynamic control of autonomous quadrotor flight in an estimated wind field,'' \textit{Proc.\ IEEE CDC}, 2013.
+\end{enumerate}
+
+\section{Teammates and Work Division}
+
+\begin{itemize}
+    \item \textbf{Abdulaziz Al-Haidary:} Data preprocessing, feature engineering, implementation and tuning of ML models (random forest, KNN).
+    \item \textbf{Azizbek Nurmatov:} Literature review, decision tree implementation, model evaluation and comparison, visualization and writeup.
+\end{itemize}
+
+\section{Midterm Milestone}
+
+By midterm we will have the data fully preprocessed and our feature pipeline completed. We expect to have at least two baseline models trained (decision tree and KNN regression) with preliminary results on deviation prediction accuracy using cross-validation, along with initial visualizations comparing actual vs desired flight paths overlaid with predicted deviations.
+
+\end{document}

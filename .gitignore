@@ -1,0 +1,30 @@
+# raw data is too big for github
+Data/
+
+# big intermediate output
+results/merged_dataset.csv
+
+# packaging artifacts
+midterm_submission/
+midterm_submission.zip
+
+# latex build junk
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# scratch
+_explore_path.png
+_explore_wind.png
+
+# python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# os
+.DS_Store
