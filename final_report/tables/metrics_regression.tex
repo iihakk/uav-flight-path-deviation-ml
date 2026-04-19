@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Regression --- 5-fold GroupKFold CV. Best RMSE per feature set in \textbf{bold}.}
+\label{tab:reg_final}
+\begin{tabular}{llrrr}
+\toprule
+Features & Model & MAE (m) & RMSE (m) & $R^2$ \\
+\midrule
+WEATHER & DecisionTree & 7.57 & 10.52 & -1.320 \\
+WEATHER & KNN & 8.88 & 11.10 & -1.583 \\
+WEATHER & RandomForest & \textbf{8.50} & \textbf{10.32} & \textbf{-1.233} \\
+\midrule
+ONBOARD & DecisionTree & 1.85 & 5.53 & +0.359 \\
+ONBOARD & KNN & \textbf{1.67} & \textbf{4.90} & \textbf{+0.497} \\
+ONBOARD & RandomForest & 1.81 & 5.42 & +0.383 \\
+\midrule
+ALL & DecisionTree & 2.25 & 6.30 & +0.166 \\
+ALL & KNN & \textbf{1.83} & \textbf{4.79} & \textbf{+0.518} \\
+ALL & RandomForest & 2.14 & 6.08 & +0.224 \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}

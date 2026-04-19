@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Classification (deviation $\ge$ 75th pct) --- 5-fold GroupKFold CV. Best F1 per feature set in \textbf{bold}.}
+\label{tab:cls_final}
+\begin{tabular}{llrrrr}
+\toprule
+Features & Model & Acc & P & R & F1 \\
+\midrule
+WEATHER & DecisionTree & 0.438 & 0.253 & 0.641 & 0.363 \\
+WEATHER & KNN & 0.409 & 0.257 & 0.721 & 0.379 \\
+WEATHER & RandomForest & \textbf{0.332} & \textbf{0.262} & \textbf{0.916} & \textbf{0.407} \\
+\midrule
+ONBOARD & DecisionTree & 0.939 & 0.906 & 0.846 & 0.875 \\
+ONBOARD & KNN & 0.936 & 0.963 & 0.774 & 0.858 \\
+ONBOARD & RandomForest & \textbf{0.947} & \textbf{0.927} & \textbf{0.854} & \textbf{0.889} \\
+\midrule
+ALL & DecisionTree & 0.935 & 0.887 & 0.850 & 0.868 \\
+ALL & KNN & 0.928 & 0.966 & 0.739 & 0.837 \\
+ALL & RandomForest & \textbf{0.945} & \textbf{0.913} & \textbf{0.862} & \textbf{0.887} \\
+\midrule
+\bottomrule
+\end{tabular}
+\end{table}
