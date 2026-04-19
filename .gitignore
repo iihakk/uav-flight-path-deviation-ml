@@ -3,10 +3,14 @@ Data/
 
 # big intermediate output
 results/merged_dataset.csv
+cache_v2/
 
 # packaging artifacts
 midterm_submission/
 midterm_submission.zip
+
+# supervisor presentation (not our work)
+College_of_Charleston_collab_2026_Hemanth_Dakshinamurthy.pptx
 
 # latex build junk
 *.aux
